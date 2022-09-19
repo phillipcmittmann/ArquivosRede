@@ -7,12 +7,12 @@ public class TCPClient {
     private static DataInputStream dataInputStream = null;
 
     public static void main(String[] args) {
-        try(Socket socket = new Socket("localhost",5000)) {
+        try(Socket socket = new Socket("localhost",8080)) {
             dataInputStream = new DataInputStream(socket.getInputStream());
 
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
-            sendFile("path/to/file1.pdf");
+            sendFile("NewFile1.txt");
 
             dataInputStream.close();
             dataInputStream.close();

@@ -7,8 +7,8 @@ public class TCPServer {
     private static DataInputStream dataInputStream = null;
 
     public static void main(String[] args) {
-        try(ServerSocket serverSocket = new ServerSocket(5000)) {
-            System.out.println("listening to port:5000");
+        try(ServerSocket serverSocket = new ServerSocket(8080)) {
+            System.out.println("listening to port:8080");
 
             Socket clientSocket = serverSocket.accept();
 
@@ -17,7 +17,7 @@ public class TCPServer {
             dataInputStream = new DataInputStream(clientSocket.getInputStream());
             dataOutputStream = new DataOutputStream(clientSocket.getOutputStream());
 
-            receiveFile("NewFile1.txt");
+            receiveFile("/recebidos/NewFile1.txt");
 
             dataInputStream.close();
             dataOutputStream.close();
